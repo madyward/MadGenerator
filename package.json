@@ -1,14 +1,16 @@
 {
   "name": "madgenerator",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "madgen": "index.js",
-    "madgen-dirs": "mkdirs.js"
+    "madgen-dirs": "mkdirs.js",
+    "madgen-files": "mkfiles.js"
   },
   "bin": {
     "madgen-dirs": "mkdirs.js",
+    "madgen-files": "mkfiles.js"
   },
   "author": "Madyson Ward",
   "license": "ISC",

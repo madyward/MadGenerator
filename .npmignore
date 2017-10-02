@@ -1,4 +1,3 @@
-src/
 src/components/nav.js
 .babelrc
 webpack.config.js
