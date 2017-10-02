@@ -20,19 +20,42 @@
 
 //DECLARE VARIABLES:
 const fs = require("fs");
+const buf = new Buffer(1024);
 
-//READ DIRECTORIES:
-fs.readdir("./src/", function(err, files){
+//SHORTEN FILE:
+//STEP 1: Open file
+fs.open("./client/readfile.txt", "r+", function(err, fd){
 	if (err){
 		return console.error(err);
 	}
-	files.forEach(function(file){
-		console.log(file);
+	console.log("File opened successfully!");
+	console.log("Now we truncate the file...");
+	//STEP 2: Truncate file
+	fs.ftruncate(fd, 10, function(err){
+		if (err){
+			console.log(err);
+		}
+		console.log("File truncated successfully!");
+		console.log("Now we read the same file...");
+		fs.read(fd, 0, buf.length, 0, function(err,bytes){
+			if (err){
+				console.log(err);
+			}
+			//ONLY print read bytes to console!
+			if (bytes > 0){
+				console.log(buf.slice(0, bytes).toString);
+			}
+			
+		});
+		//STEP 3: Close file
+		fs.close(fd, function(err){
+			if (err){
+				console.log(err);
+			}
+			console.log("File closed successfully!");
+		});
 	});
 });
-
-
-
 
 
 
