@@ -1,22 +1,54 @@
 #!/usr/bin/env node
 
-//DECLARE VARIABLES:
+
+/* MAKE DIRECTORIES */
+/*TO-DOS:
+	1) Need to add empty string var & function that will reference specific new dir name. */
+
+//STEP #1: DECLARE VARIABLES:
 const fs = require("fs");
-const buff = new Buffer(1024);
+const fse = require("fs-extra");
+const rootDir = "Directory created successfully!";
+const subDir = "Sub-directory created successfully!";
+//const buff = new Buffer(1024);
 
-//MAKE DIRECTORIES:
-//#1: src folder
-fs.mkdir("./src/", function(err){
+
+//STEP #2: ROOT DIRECTORIES
+fse.mkdir("./public/", err => {	// <--- public folder
 	if (err){
 		return console.error(err);
 	}
-	console.log("Directory created successfully.");
-});
+	console.log(rootDir);
+})
 
-//#2: components sub-folder
-fs.mkdir("./src/components/", function(err){ 
+fse.mkdir("./src/", err => {	// <--- src folder
 	if (err){
 		return console.error(err);
 	}
-	console.log("Sub-directory created successfully!");
+	console.log(rootDir);
 });
+
+
+//STEP #3: CLIENT SUB-DIRECTORIES
+fse.mkdir("./src/components/", err => {	// <--- components sub-folder
+	if (err){
+		return console.error(err);
+	}
+	console.log(subDir);
+});
+
+fse.mkdir("./src/reducers/", err => {	// <--- reducers sub-folder
+	if (err){
+		return console.error(err);
+	}
+	console.log(subDir);
+})
+
+
+
+
+
+
+
+
+

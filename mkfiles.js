@@ -1,24 +1,26 @@
 #!/usr/bin/env node
 
-//DECLARE VARIABLES:
+
+/* COPY FILE & CONTENTS */
+
+//STEP #1: Declare Variables
+//const fs = require("fs"); <-- using fs-extra npm package in place for now
 const fs = require("fs");
+const fse = require("fs-extra");
 
-//STEPS TO COPYING CONTENTS FROM ONE FILE TO ANOTHER (order may be changed)
-/*#1: 	Open file: 
-	fs.open(<"path">, <"flag">, <callback>(err, fd){
-		if (err){
-			return console.error(err);
-		}
-	}) 
-*/
-	fs.open("./src/app.js", "r+", function(err, fd){
-		if (err){
-			return console.error(err);
-		}
-	})
+//STEP #2: Open File
+fse.copy("./madgenerator/src/app.js", "./src/app1.js", err => {
+	if (err){
+		return console.error(err);
+	}
+	console.log("File copy created!");
+});
 
-	//#2: Read file 
-	//#3: Create write file
-	//#4: Write file
-	//#5: Truncate 
-	//#6: Read again
+
+
+
+//#2: Read file 
+//#3: Create write file
+//#4: Write file
+//#5: Truncate 
+//#6: Read again
