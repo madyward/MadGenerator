@@ -5,6 +5,7 @@ const fs = require("fs");
 const buff = new Buffer(1024);
 
 //MAKE DIRECTORIES:
+//#1: src folder
 fs.mkdir("./src/", function(err){
 	if (err){
 		return console.error(err);
@@ -12,6 +13,7 @@ fs.mkdir("./src/", function(err){
 	console.log("Directory created successfully.");
 });
 
+//#2: components sub-folder
 fs.mkdir("./src/components/", function(err){ 
 	if (err){
 		return console.error(err);
