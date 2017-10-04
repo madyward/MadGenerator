@@ -1,5 +1,9 @@
+lib/
 node_modules/
+src/
 .babelrc
 .gitignore
+index.html
+mkfiles.test.js
 webpack.config.js
 bundle.js
