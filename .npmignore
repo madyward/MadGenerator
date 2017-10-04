@@ -1,4 +1,5 @@
-src/components/nav.js
+node_modules/
 .babelrc
+.gitignore
 webpack.config.js
 bundle.js
