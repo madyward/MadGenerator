@@ -6,8 +6,11 @@ const readStream = fs.createReadStream(__dirname + "/readfile.js", "utf8");
 const writeStream = fs.createWriteStream(__dirname + "/writefile.js");
 
 
-readStream.on("data", function(chunk){
-	console.log("new chunk received:");
-	//Every time we get a chunk, we're going to write to a writestream.txt
-	writeStream.write(chunk);
+fse.copy("./src/app.js", "./src/app1.js", {preserveTimestamps: true}, err => {
+	if (err){
+		return console.error(err);
+	}
+	console.log("File copy created!");
 });
+
+

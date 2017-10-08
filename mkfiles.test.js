@@ -24,9 +24,9 @@ readStream.on("data", function(chunk){
 
 //BELOW WORKS! BUT BOTH FILES ARE CREATED AND CONTENTS ARE NOT VISIBLE TO USER.
 
-// fse.copy("./madgenerator/src/app.js", "./src/app1.js", err => {
-// 	if (err){
-// 		return console.error(err);
-// 	}
-// 	console.log("File copy created!");
-// });
+fse.copy("./madgenerator/src/app.js", "./src/app1.js", err => {
+	if (err){
+		return console.error(err);
+	}
+	console.log("File copy created!");
+});

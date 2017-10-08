@@ -1,8 +1,8 @@
 lib/
 node_modules/
-src/
 .babelrc
 .gitignore
+idk.js
 index.html
 mkfiles.test.js
 webpack.config.js
