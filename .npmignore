@@ -2,8 +2,6 @@ lib/
 node_modules/
 .babelrc
 .gitignore
-idk.js
-index.html
 mkfiles.test.js
 webpack.config.js
 bundle.js

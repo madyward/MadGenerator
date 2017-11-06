@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 
-
 //STEP #1: Declare Variables
 const fs = require("fs");
 const fse = require("fs-extra");
 const readStream = fs.createReadStream(__dirname + "/readfile.js", "utf8");
 const writeStream = fs.createWriteStream(__dirname + "/writefile.js");
-
 
 readStream.on("data", function(chunk){
 	console.log("new chunk received:");
